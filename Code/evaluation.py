@@ -21,6 +21,16 @@ def make_csv_header():
 
     return header_row
 
+def make_csv_header_eval_fold():
+    """
+            Creates a list representing the header row for a CSV file that contains evaluation metrics.
+
+            Returns:
+                header_row (list): The header row for the CSV file.
+            """
+    header_row = ['NMI', 'DICE', 'HAUSDORFF']
+    return header_row
+
 def evaluate_prediction(result_metrics, prediction_path, filename_predict, fixed_img_path, filename_fixed,
                         filename_seg_fixed, filename_seg_moving):
     """
@@ -74,7 +84,7 @@ def combine_evaluation_results_from_folds(experiment_path):
     eval_mean_file_path = os.path.join(experiment_path, 'evaluation-mean.csv')
     eval_std_file_path = os.path.join(experiment_path, 'evaluation-std.csv')
 
-    header_row = make_csv_header()
+    header_row = make_csv_header_eval_fold()
     results = []
     mean_statistics = []
     std_statistics = []
@@ -128,7 +138,7 @@ def combine_evaluation_results_in_file(experiment_path):
        """
 
     all_data_file_path = os.path.join(experiment_path, 'all_data.csv')
-    header_row = make_csv_header()
+    header_row = make_csv_header_eval_fold()
     results = []
 
     dir_list = os.listdir(experiment_path)
@@ -168,7 +178,7 @@ def make_boxplot_graphic(experiment_path):
         os.makedirs(os.path.join(experiment_path, 'plots'))
 
     linewidth = 2
-    metrics = make_csv_header()
+    metrics = make_csv_header_eval_fold()
 
     for title in metrics:
         data = []
