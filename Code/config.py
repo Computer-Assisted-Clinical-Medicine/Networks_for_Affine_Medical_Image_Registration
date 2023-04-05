@@ -48,6 +48,8 @@ normalizing_method = NORMALIZING.WINDOW
 number_of_vald = 5
 num_train_files =-1
 
+kfold = 5
+
 width=256
 height=256
 numb_slices=64
