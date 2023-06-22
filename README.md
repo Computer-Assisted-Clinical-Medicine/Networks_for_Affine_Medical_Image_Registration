@@ -3,6 +3,7 @@
 This repository contains the implementation of 20 neural networks for affine registration of medical images, which were originally published in research papers. Since three-dimensional data was used, all networks were adapted accordingly. In order to provide a benchmark for comparison, we integrated our own neural network into the framework. The framework was implemented using Keras with Tensorflow backend.
 
 If you use our code in your work please cite the following paper:
+
 A. Strittmatter et al., "Deep Learning-Based Affine Medical Image Registration for Multimodal Minimal-Invasive Image-Guided Interventions - A Comparative Study on Generalizability", Z Med Phys 2023, https://doi.org/10.1016/j.zemedi.2023.05.003
 
 # Benchmark Network
